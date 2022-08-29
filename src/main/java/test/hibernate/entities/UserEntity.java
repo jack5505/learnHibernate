@@ -20,11 +20,9 @@ public class UserEntity {
     @Column
     private String name;
 
-    @Column
-    private Integer total;
 
-    @Column
-    private Integer goal;
+
+    private ProteinEntity proteinEntity = new ProteinEntity();
 
     public Long getId() {
         return id;
@@ -42,19 +40,11 @@ public class UserEntity {
         this.name = name;
     }
 
-    public Integer getTotal() {
-        return total;
+    public ProteinEntity getProteinEntity() {
+        return proteinEntity;
     }
 
-    public void setTotal(Integer total) {
-        this.total = total;
-    }
-
-    public Integer getGoal() {
-        return goal;
-    }
-
-    public void setGoal(Integer goal) {
-        this.goal = goal;
+    public void setProteinEntity(ProteinEntity proteinEntity) {
+        this.proteinEntity = proteinEntity;
     }
 }

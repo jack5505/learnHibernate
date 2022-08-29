@@ -14,16 +14,12 @@ public class Test {
         System.out.println("Hello world");
         Session session = HibernateConnector.getInstance().getSession();
         session.beginTransaction();
-       /* UserEntity userEntity = new UserEntity();
+        UserEntity userEntity = new UserEntity();
         userEntity.setName("jack212");
-        userEntity.setGoal(1);
-        userEntity.setId(1L);
-        userEntity.setTotal(1);
-        session.save(userEntity);*/
-        UserEntity userEntity = session.load(UserEntity.class,1L);
-        System.out.println(userEntity.getGoal());
-        System.out.println(userEntity.getName());
-        userEntity.setGoal(userEntity.getGoal() + 10 );
+        userEntity.getProteinEntity().setGoal(1);
+        userEntity.setId(2L);
+        userEntity.getProteinEntity().setTotal(12);
+        session.save(userEntity);
         session.getTransaction().commit();
         session.close();
     }
