@@ -1,4 +1,4 @@
-package test.hibernate;
+package test.hibernate.entities;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -22,8 +22,8 @@ public class Test {
 
         UserEntity userEntity = new UserEntity();
         userEntity.setId(8L);
-        userEntity.setTotal(123);
-        userEntity.setName("Jackwasup");
+        userEntity.setGoal( 123);
+        userEntity.setName("Jackwasup12121");
 
 
         try

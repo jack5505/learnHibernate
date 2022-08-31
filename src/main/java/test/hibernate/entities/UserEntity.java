@@ -1,5 +1,6 @@
 package test.hibernate.entities;
 
+import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,7 +23,8 @@ public class UserEntity {
 
     @Column
     private Integer goal;
-    @Column
+
+    @Basic(optional = false)
     private Integer total;
 
     public Integer getGoal() {
