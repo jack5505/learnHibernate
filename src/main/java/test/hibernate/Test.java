@@ -14,6 +14,8 @@ import test.hibernate.entities.UserEntity;
  */
 public class Test {
     public static void main(String[] args) {
+        // EntityManagerFactory
+        // EntityManager
         EntityManagerFactory emf = Persistence
             .createEntityManagerFactory("my-persistence-unit");
         EntityManager em = emf.createEntityManager();
@@ -28,6 +30,7 @@ public class Test {
         {
             em.getTransaction().begin();
             em.persist(userEntity); // adding the instance in the context
+            // warning persist is not inserting into database data
             em.getTransaction().commit();
         }catch (Exception e){
             em.getTransaction().rollback();
