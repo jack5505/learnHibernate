@@ -1,8 +1,6 @@
 package test.hibernate.lesson3.entity;
 
-import java.time.LocalDate;
-import java.util.Date;
-import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,15 +11,17 @@ import javax.persistence.Id;
  *  @author Sabirov Jakhongir
  *
  */
-@Entity(name = "products")
-public class Products {
+@Entity
+public class Company {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "exp_date")
-    private LocalDate expdate;
+    private String name;
+
+    @Embedded
+    private Address address;
 
     public Integer getId() {
         return id;
@@ -31,11 +31,19 @@ public class Products {
         this.id = id;
     }
 
-    public LocalDate getExpdate() {
-        return expdate;
+    public String getName() {
+        return name;
     }
 
-    public void setExpdate(LocalDate expdate) {
-        this.expdate = expdate;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
 }
