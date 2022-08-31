@@ -20,9 +20,26 @@ public class UserEntity {
     @Column
     private String name;
 
+    @Column
+    private Integer goal;
+    @Column
+    private Integer total;
 
+    public Integer getGoal() {
+        return goal;
+    }
 
-    private ProteinEntity proteinEntity = new ProteinEntity();
+    public void setGoal(Integer goal) {
+        this.goal = goal;
+    }
+
+    public Integer getTotal() {
+        return total;
+    }
+
+    public void setTotal(Integer total) {
+        this.total = total;
+    }
 
     public Long getId() {
         return id;
@@ -40,11 +57,5 @@ public class UserEntity {
         this.name = name;
     }
 
-    public ProteinEntity getProteinEntity() {
-        return proteinEntity;
-    }
 
-    public void setProteinEntity(ProteinEntity proteinEntity) {
-        this.proteinEntity = proteinEntity;
-    }
 }
